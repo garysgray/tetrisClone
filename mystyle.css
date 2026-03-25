@@ -1,40 +1,56 @@
+/*=============================================================================
+   File:    mystyle.css
+   Desc:    Main stylesheet for Tetris - page layout, game container, and UI
+=============================================================================*/
+
 body
 {
     background: black;
-    color:white;
+    color: white;
 }
+
+/* game well container - sized explicitly to fit WIDTH*squareSize x HEIGHT*squareSize */
 #game-holder
 {
     position: relative;
-    color:black;
+    color: black;
     padding: 20px;
+    width: calc(20 * 16px + 40px);
+    height: calc(30 * 16px + 40px);
+    overflow: visible;
 }
 
+/* key hints display */
 #keys
 {
-    color:white;
-    list-style-type:none; 
+    color: white;
+    list-style-type: none;
 }
 
+/* game status display (pause, game over, etc) */
 #status
 {
-    color:white;
-    list-style-type:none;
+    color: white;
+    list-style-type: none;
 }
 
-.grid-container {
+/* three column layout - left panel, game, right panel */
+.grid-container
+{
     display: grid;
     grid-template-columns: auto auto auto;
     background-color: rgb(5, 44, 77);
     padding: 1%;
     margin: 3%;
-    height: 80%
-  }
-  .grid-item {
+    height: 80%;
+}
+
+/* each grid cell */
+.grid-item
+{
     background-color: black;
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 5%;
     font-size: 30px;
     text-align: center;
-    
-  }
+}

@@ -1,42 +1,37 @@
+//=============================================================================
+// File:    tools.js
+// Desc:    KeyTool class - tracks keyboard input using global keysDown and
+//          keysUp state objects
+//=============================================================================
+
 class KeyTool
 {
-    initKeys() 
+    // registers keydown and keyup listeners on the window
+    initKeys()
+    {
+        window.addEventListener('keydown', (e) => { keysDown[e.keyCode] = true; });
+        window.addEventListener('keyup',   (e) =>
         {
-            window.addEventListener('keydown', function(e) 
-            {
-                keysDown[e.keyCode] = true;
-                            
-            });
-        
-            window.addEventListener('keyup', function(e) 
-            {
-                delete keysDown[e.keyCode];
-                keysUp[e.keyCode] = true;			
-            });	
-        }
-        
-        checkKey(aNum)
-        {	
-            if(aNum in keysDown)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+            delete keysDown[e.keyCode];
+            keysUp[e.keyCode] = true;
+        });
+    }
 
-        checkKeyUp(aNum)
-        {	
-            if(aNum in keysUp && (aNum in keysDown) == false)
-            {
-                delete keysUp[aNum];
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+    // returns true if the key is currently held down
+    checkKey(aNum)
+    {
+        return aNum in keysDown;
+    }
+
+    // returns true once when a key is released
+    // consumes the keyUp event so it only fires once per press
+    checkKeyUp(aNum)
+    {
+        if (aNum in keysUp && !(aNum in keysDown))
+        {
+            delete keysUp[aNum];
+            return true;
         }
+        return false;
+    }
 }

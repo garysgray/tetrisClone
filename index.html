@@ -1,31 +1,44 @@
+<!--=============================================================================
+    File:    index.html
+    Desc:    Main HTML page for Tetris - page structure, layout, and script loading
+=============================================================================-->
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="mystyle.css">
 </head>
-
 <body>
-    <script type="text/javascript" src="tools.js"></script>
-    <script type="text/javascript" src="shapes.js"></script>
-    <script type="text/javascript" src="controller.js"></script>
-    <script type="text/javascript" src="game.js"></script>
-    <script type="text/javascript" src="main.js"></script>
 
+    <!-- three column layout: info panel | game | empty panel -->
+    <div class="grid-container">
 
+        <!-- left panel: title, key hints, status messages -->
+        <div class="grid-item">
+            <h1>TETRIS</h1>
+            <div id="keys"></div>
+            <div id="status"></div>
+        </div>
 
+        <!-- center panel: game well -->
+        <div class="grid-item">
+            <div id="game-holder"></div>
+        </div>
 
-    
-<div class="grid-container">
-  <div class="grid-item">
-      <h1>TETRIS</h1>
-    <div id="keys"></div>
-    <div id="status"></div>	
-  </div>
-  
-  <div class="grid-item">
-          <div id="game-holder"></div>
-  </div>
-  <div class="grid-item"></div>    
-</div>
+        <!-- right panel: empty, reserved for future use -->
+        <div class="grid-item"></div>
 
+    </div>
+
+    <!-- scripts loaded at bottom so DOM is ready before game initializes -->
+    <script src="tools.js"></script>
+    <script src="shapes.js"></script>
+    <script src="controller.js"></script>
+    <script src="game.js"></script>
+    <script src="main.js"></script>
 
 </body>
 </html>
