@@ -45,6 +45,31 @@ body
     height: 80%;
 }
 
+/* github link fixed to bottom left corner of the page */
+#github-link
+{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+#github-link a
+{
+    color: #888;
+    font-size: 13px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: lowercase;
+    border-bottom: 1px solid #333;
+    padding-bottom: 3px;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+#github-link a:hover
+{
+    color: white;
+    border-color: white;
+}
 /* each grid cell */
 .grid-item
 {
