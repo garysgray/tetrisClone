@@ -1,0 +1,40 @@
+body
+{
+    background: black;
+    color:white;
+}
+#game-holder
+{
+    position: relative;
+    color:black;
+    padding: 20px;
+}
+
+#keys
+{
+    color:white;
+    list-style-type:none; 
+}
+
+#status
+{
+    color:white;
+    list-style-type:none;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: rgb(5, 44, 77);
+    padding: 1%;
+    margin: 3%;
+    height: 80%
+  }
+  .grid-item {
+    background-color: black;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 5%;
+    font-size: 30px;
+    text-align: center;
+    
+  }
